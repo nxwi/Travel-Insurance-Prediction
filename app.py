@@ -4,13 +4,30 @@
 
 import streamlit as st
 import pickle
-from PIL import Image
+import pandas as pd
 
 
 def main():
+    st.set_page_config(
+    page_title="Insurance Prediction",
+    page_icon="💸",
+    # layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://www.extremelycoolapp.com/help',
+        'Report a bug': "https://www.extremelycoolapp.com/bug",
+        'About': "# This is a header. This is an *extremely* cool app!"
+    }
+    )
     st.title('Insurance Prediction')
-    image = Image.open('image.jpeg')
-    st.image(image, width=700)
+    st.image('image.jpeg', width=700)
+    st.write('In the section below, I will take you through the task of Insurance Prediction with Machine Learning using Python. For the task of Insurance prediction with machine learning, I have collected a dataset from Kaggle about the previous customers of a travel insurance company. Here our task is to train a machine learning model to predict whether an individual will purchase the insurance policy from the company or not.')    
+    
+    data = pd.read_csv('TravelInsurancePrediction.csv')
+    st.expander("Show Data").dataframe(data,hide_index=True)
+
+
+
     age = st.number_input('Age', step=1, placeholder='Type here')
     option = st.selectbox('Employment Type', ('Government Sector', 'Private Sector/Self Employed'))
     employmentType = 0 if option == 'Government Sector' else 1
