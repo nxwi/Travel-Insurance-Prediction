@@ -1,3 +1,7 @@
+# pip install -r requirements.txt
+# streamlit run app.py
+
+
 import streamlit as st
 import pickle
 from PIL import Image
