@@ -22,9 +22,15 @@ def main():
     st.title('Insurance Prediction')
     st.image('image.jpeg', width=700)
     st.write('In the section below, I will take you through the task of Insurance Prediction with Machine Learning using Python. For the task of Insurance prediction with machine learning, I have collected a dataset from Kaggle about the previous customers of a travel insurance company. Here our task is to train a machine learning model to predict whether an individual will purchase the insurance policy from the company or not.')    
+    st.write('Let\'s start the task of Insurance prediction with machine learning by importing the necessary Python libraries and the dataset:')
     
     data = pd.read_csv('TravelInsurancePrediction.csv')
     st.expander("Show Data").dataframe(data,hide_index=True)
+
+    code = '''import pandas as pd
+data = pd.read_csv("TravelInsurancePrediction.csv")
+data.head()'''
+    st.code(code, language='python')
 
 
 
