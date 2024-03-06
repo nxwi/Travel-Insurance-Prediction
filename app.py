@@ -30,7 +30,15 @@ def main():
     st.image('image.jpeg', width=700)
     st.write('In the section below, I will take you through the task of Insurance Prediction with Machine Learning using Python. For the task of Insurance prediction with machine learning, I have collected a dataset from Kaggle about the previous customers of a travel insurance company. Here our task is to train a machine learning model to predict whether an individual will purchase the insurance policy from the company or not.')    
     
-    tab01, tab02 = st.tabs(["Data", "Model"])
+    col1, col2 = st.columns([1,7])
+
+    with col1:
+        st.link_button("Colab", "https://colab.research.google.com/drive/1quta7tpMjplPrpYfQ_0ew7FCNZgjqO_y?usp=sharing")
+
+    with col2:
+        st.link_button("DataSet", "https://raw.githubusercontent.com/amankharwal/Website-data/master/TravelInsurancePrediction.csv")
+    
+    tab01, tab02, = st.tabs(["Data", "Model"])
 
     with tab01:
 
